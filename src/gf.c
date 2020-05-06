@@ -1485,7 +1485,7 @@ static void update_max_args(jl_methtable_t *mt, jl_value_t *type)
         mt->max_args = na;
 }
 
-jl_array_t *_jl_debug_method_invalidation = NULL;
+jl_array_t *_jl_debug_method_invalidation JL_GLOBALLY_ROOTED = NULL;
 JL_DLLEXPORT jl_value_t *jl_debug_method_invalidation(int state)
 {
     if (state) {
