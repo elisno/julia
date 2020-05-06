@@ -1491,9 +1491,7 @@ JL_DLLEXPORT jl_value_t *jl_debug_method_invalidation(int state)
     if (state) {
         if (_jl_debug_method_invalidation)
             return (jl_value_t*) _jl_debug_method_invalidation;
-        JL_GC_PUSH1(&_jl_debug_method_invalidation);
         _jl_debug_method_invalidation = jl_alloc_array_1d(jl_array_any_type, 0);
-        JL_GC_POP();
         return (jl_value_t*) _jl_debug_method_invalidation;
     }
     _jl_debug_method_invalidation = NULL;
